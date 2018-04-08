@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7634dfd-c0e1-4709-96e3-011ec1975ac2">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1914"/>
+	<subDataset name="EmpSalaryComponents" uuid="545484a8-2dae-4ecf-bbe3-209c3d8d7da5">
+		<queryString language="xPath">
+			<![CDATA[]]>
+		</queryString>
+		<field name="ComponentDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[ComponentDesc]]></fieldDescription>
+		</field>
+		<field name="ComponentAmt" class="java.lang.Double">
+			<fieldDescription><![CDATA[ComponentAmt]]></fieldDescription>
+		</field>
+		<variable name="TotalComponentAmt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ComponentAmt}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<field name="test1" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test1]]></fieldDescription>
+	</field>
+	<field name="test2" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test2]]></fieldDescription>
+	</field>
+	<field name="test3" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test3]]></fieldDescription>
+	</field>
+	<field name="logoPath" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/logoPath]]></fieldDescription>
+	</field>
+	<field name="TotalSalaryComponentAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[sum(/Document/Disclosure/row/Always/EmpInfo/SalaryComponents/Component/ComponentAmt)]]></fieldDescription>
+	</field>
+	<background>
+		<band height="750" splitType="Stretch">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<image isUsingCache="false">
+				<reportElement x="24" y="188" width="508" height="514" uuid="1513a042-f5e9-4ce0-82de-9c88271ce36e"/>
+				<imageExpression><![CDATA[$F{logoPath}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="68" width="555" height="20" uuid="ed57293c-381d-427a-abfd-80a25034d408"/>
+				<textElement textAlignment="Center">
+					<font size="14" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AVS Technologies & Services LLP "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="88" width="555" height="28" uuid="6a05b617-28d3-4579-b537-528eb5abe278"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1539/2, 4th Floor, Street no-5, Wazir Nagar, Kotla Mubarakpur, \nNear South Extn. Part-1, New Delhi – 110003"]]></textFieldExpression>
+			</textField>
+			<image isUsingCache="false">
+				<reportElement x="239" y="5" width="75" height="63" uuid="535afb8d-2cc4-4688-8109-ec0ca95eb62c"/>
+				<imageExpression><![CDATA[$F{logoPath}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="106" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="555" height="20" uuid="3d7c342e-6cfb-447c-9f47-24e5fed81279"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Dear " + "Rhantsothsi,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="555" height="20" uuid="ebafd908-fa9e-4298-ab6c-77aa75b722e4"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Welcome to the AVS family!"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="555" height="20" uuid="090dd796-953e-40b4-844d-82c0419ef3da"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["We are pleased to make you an offer of employment to join AVS on the following terms and conditions."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="50" width="555" height="31" uuid="c3d55d76-176b-4291-a785-b55598465dd8"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["At AVS you will experience an environment charged with enthusiasm and one that offers huge growth potential for individuals who live the Company vision with a passion."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="20" uuid="dee7b760-59f1-498d-a8c7-6eeaf2afb064"/>
+				<textElement markup="none">
+					<font isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Appointment Terms and Conditions:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["You shall be appointed as <style isBold='true' pdfFontName='Helvetica-Bold' >Sr. Sales Associate.</style> "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["1."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="922ccccb-d54a-4607-8155-909498b49a7b"/>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Your Date of Joining will be <style isBold='true' pdfFontName='Helvetica-Bold'>February 6, 2018</style>. The offer will stand revoked if you are unable to join us on the said date."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="7fed0265-f1a8-408e-a60a-9ae5e5caaef9"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["2."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="922ccccb-d54a-4607-8155-909498b49a7b"/>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["As an employee of the organisation, your <style isBold='true' pdfFontName='Helvetica-Bold'>Annual Cost to Company</style> will be <style isBold='true' pdfFontName='Helvetica-Bold'>Rs. 2,04,000/- (Rupees Two Lakh Four Thousand Only)</style>. You will be eligible for the variable bonus. (The variable bonus (0% - 15%) mentioned is indicative and based on individual &amp; Company performance as per the AVS policy). "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="7fed0265-f1a8-408e-a60a-9ae5e5caaef9"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["3."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="32">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="922ccccb-d54a-4607-8155-909498b49a7b"/>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["You will be based in <style isBold='true' pdfFontName='Helvetica-Bold' >Delhi - NCR</style> but will serve the Company or any of its subsidiaries or associated companies in any location within or outside of India."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="7fed0265-f1a8-408e-a60a-9ae5e5caaef9"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["4."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="20" uuid="ec984d21-d558-44b7-931a-56daf24bfda5"/>
+				<textElement markup="none">
+					<font isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Your employment with the Company is subject to:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["The accuracy of the testimonials and information provided by you."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["a."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="23">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Your being free from any contractual restrictions preventing you from accepting this offer or starting work on the above-mentioned date. "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["b."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["You providing (by email or in hard copy) an accepted copy of your resignation from your current employer within ten calendar days of having received this offer/letter of intent. "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["c."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["You providing two satisfactory references and clearing the background check conducted by our screening agency."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["d."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="23">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["You submitting a copy of your Permanent Account Number (PAN), on or before your date of joining. If you have applied for a new PAN, you are required to submit proof of the same."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["e."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["You will serve a probationary period of three months."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["f."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["During the probation period, either party may terminate the contract by giving one month’s notice in writing. On satisfactory completion of your probation, your services will be confirmed by the management in writing."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["g."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="51" y="0" width="504" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["The Company reserves the right to extend the probationary period in the event that your performance is not up to expectation."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="52" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA["h."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="9" width="555" height="31" isPrintWhenDetailOverflows="true" uuid="b40eb994-688b-48d2-afef-2ada4fdd543a"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["We look forward to your dedication and commitment as we work together and wish you many fruitful years here at AVS. "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="127">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="76" width="555" height="51" isPrintWhenDetailOverflows="true" uuid="61ca1805-4f8b-48f1-9520-71a2fdb1b657"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["With best wishes, \nFor AVS Technologies"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="76" isPrintWhenDetailOverflows="true" uuid="21762c0c-1c6c-4d3a-b0ce-9d65837c4321"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="125">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="74" width="555" height="51" isPrintWhenDetailOverflows="true" uuid="61ca1805-4f8b-48f1-9520-71a2fdb1b657"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Amit Pandit\nAuthorised Signatory"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="76" isPrintWhenDetailOverflows="true" uuid="42f0745a-236b-4d7b-90d0-7876bb82c226"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="91">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="42" width="280" height="49" isPrintWhenDetailOverflows="true" uuid="61ca1805-4f8b-48f1-9520-71a2fdb1b657"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Signed: __________________ "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="43" isPrintWhenDetailOverflows="true" uuid="42f0745a-236b-4d7b-90d0-7876bb82c226"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["I have read and accepted the terms and conditions of employment as explained above"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="42" width="275" height="49" isPrintWhenDetailOverflows="true" uuid="66646cf5-e11a-47af-b566-1938bca181d9"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date: __________________ "]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="202" splitType="Prevent">
+			<textField>
+				<reportElement x="0" y="51" width="555" height="20" uuid="2f726fda-a086-4a1c-a79f-96b94e878042"/>
+				<textElement textAlignment="Center">
+					<font size="14" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ANNEXURE – I"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="119" width="133" height="20" uuid="a7b970bd-9d77-41d7-abe2-6c13e9a5e273"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Designation"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="100" width="133" height="20" uuid="cf184f9b-9123-48f6-adc4-d0cead7d268d"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="100" width="423" height="20" uuid="c12cbdcf-8601-44d0-afcc-9fd9f5d40c53"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":  Rhantsothsi Thsankur"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="119" width="423" height="20" uuid="3f0fa8a2-79c2-4969-a4cf-bc64f2d43e65"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":  Sr. Sales Associate"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="177" width="254" height="25" uuid="f147fbe8-56a2-4e88-a52f-af5790fe5839"/>
+				<box leftPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Payment Details"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="177" width="150" height="25" uuid="c123873b-3b0a-4be1-ae95-5ae33127c0c5"/>
+				<box leftPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Actuals (Per Month)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="177" width="151" height="25" uuid="58860a6d-afed-45ed-a012-bc286e06b85c"/>
+				<box leftPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Annual (Per Annum)"]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="1" width="100" height="1" uuid="aa7cf4f6-b633-4cce-9dc0-ce2221927beb"/>
+			</break>
+		</band>
+		<band height="25">
+			<componentElement>
+				<reportElement x="0" y="0" width="555" height="25" uuid="31d4eb81-71fe-4cbe-b8d5-65488cbcb602"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="EmpSalaryComponents" uuid="632b23c5-770e-469a-b049-33d3f0458001">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Document/Disclosure/row/Always/EmpInfo/SalaryComponents/Component")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="25" width="555">
+						<textField>
+							<reportElement x="404" y="0" width="151" height="25" uuid="703f0d7d-5a74-49b3-b470-b127f64a4716"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentAmt}*12]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="254" y="0" width="150" height="25" uuid="b6b0b5f0-7de6-4198-80be-1648846e1848"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentAmt}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="0" width="254" height="25" uuid="cf3e69cf-4f63-4f16-a539-13f64e2d91b8"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+								<font pdfFontName="Helvetica-Bold"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{ComponentDesc}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="25">
+			<textField>
+				<reportElement x="0" y="0" width="254" height="25" uuid="7235a0b7-6858-4c96-8338-612f02e53f3f"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="0" width="151" height="25" uuid="369d783d-e3c9-4a2d-b975-894a0d3a0bcf"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TotalSalaryComponentAmt}*12]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="0" width="150" height="25" uuid="8a8e9c37-5633-4f9f-aaf9-b98958c40352"/>
+				<box leftPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TotalSalaryComponentAmt}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="87">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="25" width="555" height="33" isPrintWhenDetailOverflows="true" uuid="10046088-e465-44c9-89fd-ee7edd5cde8a"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["*Note: KRA’s are paid subjected to monthly performance (detailed with regards to KRA would be mentioned in the appointment letter)."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="91">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="42" width="280" height="49" isPrintWhenDetailOverflows="true" uuid="c50e890c-950c-44c7-a641-435704f54b66"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Signed: __________________ "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="43" isPrintWhenDetailOverflows="true" uuid="70d533c0-0533-495b-82c9-37514f77abe1"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["I have read and accepted the terms and conditions of employment as explained above"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="280" y="42" width="275" height="49" isPrintWhenDetailOverflows="true" uuid="106f1ce6-09f2-43a2-b26a-09572934ad8d"/>
+				<textElement markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date: __________________ "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField isStretchWithOverflow="true" evaluationTime="Page">
+				<reportElement stretchType="RelativeToBandHeight" x="231" y="0" width="83" height="29" isPrintWhenDetailOverflows="true" uuid="117bab1b-b9a2-44ec-a0de-9d8ecd384f71"/>
+				<textElement textAlignment="Center" markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement stretchType="RelativeToBandHeight" x="290" y="0" width="23" height="29" isPrintWhenDetailOverflows="true" uuid="f46218a8-fcf4-4d72-a7dd-d46df1dc4b01"/>
+				<textElement textAlignment="Center" markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

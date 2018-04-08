@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7634dfd-c0e1-4709-96e3-011ec1975ac2">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="EmpSalaryComponents" uuid="969cce10-e5f1-429e-9c98-b764bc3514ef">
+		<queryString language="xPath">
+			<![CDATA[]]>
+		</queryString>
+		<field name="ComponentDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[ComponentDesc]]></fieldDescription>
+		</field>
+		<field name="ComponentAmt" class="java.lang.Double">
+			<fieldDescription><![CDATA[ComponentAmt]]></fieldDescription>
+		</field>
+		<variable name="TotalComponentAmt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ComponentAmt}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="EmpSalaryEarnings" uuid="db840929-4295-43ec-959a-c8bf5c24a749">
+		<queryString language="xPath">
+			<![CDATA[]]>
+		</queryString>
+		<field name="ComponentDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[ComponentDesc]]></fieldDescription>
+		</field>
+		<field name="ComponentAmt" class="java.lang.Double">
+			<fieldDescription><![CDATA[ComponentAmt]]></fieldDescription>
+		</field>
+		<variable name="TotalComponentAmt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ComponentAmt}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="EmpSalaryDeductions" uuid="68de951f-2f51-4067-897e-60a8b5d82920">
+		<queryString language="xPath">
+			<![CDATA[]]>
+		</queryString>
+		<field name="ComponentDesc" class="java.lang.String">
+			<fieldDescription><![CDATA[ComponentDesc]]></fieldDescription>
+		</field>
+		<field name="ComponentAmt" class="java.lang.Double">
+			<fieldDescription><![CDATA[ComponentAmt]]></fieldDescription>
+		</field>
+		<variable name="TotalComponentAmt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ComponentAmt}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<field name="test1" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test1]]></fieldDescription>
+	</field>
+	<field name="test2" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test2]]></fieldDescription>
+	</field>
+	<field name="test3" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/test3]]></fieldDescription>
+	</field>
+	<field name="logoPath" class="java.lang.String">
+		<fieldDescription><![CDATA[/Document/Disclosure/row/Always/logoPath]]></fieldDescription>
+	</field>
+	<background>
+		<band height="750" splitType="Stretch">
+			<printWhenExpression><![CDATA[false]]></printWhenExpression>
+			<image isUsingCache="false">
+				<reportElement x="24" y="188" width="508" height="514" uuid="1513a042-f5e9-4ce0-82de-9c88271ce36e"/>
+				<imageExpression><![CDATA[$F{logoPath}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement x="74" y="18" width="481" height="20" uuid="ed57293c-381d-427a-abfd-80a25034d408"/>
+				<textElement textAlignment="Center">
+					<font size="14" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AVS Technologies & Services LLP "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="39" width="481" height="28" uuid="6a05b617-28d3-4579-b537-528eb5abe278"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1539/2, 4th Floor, Street no-5, Wazir Nagar, Kotla Mubarakpur, \nNear South Extn. Part-1, New Delhi – 110003"]]></textFieldExpression>
+			</textField>
+			<image isUsingCache="false">
+				<reportElement x="0" y="4" width="74" height="63" uuid="535afb8d-2cc4-4688-8109-ec0ca95eb62c"/>
+				<box bottomPadding="0">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<imageExpression><![CDATA[$F{logoPath}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="106" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="74" height="20" uuid="3d7c342e-6cfb-447c-9f47-24e5fed81279"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PaySlip :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="74" height="20" uuid="ebafd908-fa9e-4298-ab6c-77aa75b722e4"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Emp Code"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="10" width="74" height="20" uuid="c5322177-79ff-44e2-9312-2ad9265fecc4"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="30" width="74" height="20" uuid="a4e53297-9ebc-4abd-a06c-8fc21259c13f"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["E1401012"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="10" width="115" height="20" uuid="0c02e08c-f793-4168-9b94-9a639c7bbcfc"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Payslip for the month:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="80" width="115" height="20" uuid="03bd153b-216e-4752-a55a-d343c424e5eb"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Emp PAN No.:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="50" width="115" height="31" uuid="9a765e00-e03c-4711-bce4-8e8abd0f0b4f"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["UAN No.:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="30" width="125" height="20" uuid="683aadd9-0c68-4066-aaca-61441ba7deff"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Mr. Sachin Bansode"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="80" width="125" height="20" uuid="daa0a1a7-28b6-4917-8861-da6e5bf44abe"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["BACPB7422A"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="50" width="125" height="31" uuid="07a15cfd-89a9-46bb-a058-45d6e79ba3e1"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["100377937456"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="10" width="125" height="20" uuid="b9c9f68b-661e-4365-a304-4079b2b04698"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["December 2017"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="30" width="115" height="20" uuid="6cd299bb-494e-431b-a2bf-097801f1befb"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Name:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="30" width="74" height="20" uuid="5bb86f21-6090-4524-ab5e-654d6c4f5336"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["29000.00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="10" width="74" height="20" uuid="71f2d6ae-9b85-4c14-b6f2-309b8a9c5873"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["AVS Tech"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="30" width="74" height="20" uuid="94c6b7f3-9a37-488b-a342-ff400905fe74"/>
+				<textElement markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Basic :"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="74" y="0" width="65" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["31.00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="74" height="20" uuid="c60e5043-1c56-45b9-ba32-6c9f1079556c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Days Paid :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="213" y="0" width="67" height="20" uuid="f24b95d9-04fa-4b65-9a4c-1df84e2c0c9c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["31.00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="74" height="20" uuid="ff65d021-f843-4c9c-a403-03a6c59e4e81"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Days Present :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="489" y="0" width="66" height="20" uuid="92471fdc-5422-4d4f-9731-10112959b4ea"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0.00 / 0.00"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="354" y="0" width="61" height="20" uuid="ae143c94-a2d8-49eb-ae28-d4df874e6b57"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0.00 / 0.00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="74" height="20" uuid="2bb7f7a7-8dd3-4004-9f68-402847f71d69"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["W.Off/Pd.Off :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="0" width="74" height="20" uuid="c0f5bab9-2327-423b-9d90-6bedd624c2e8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LWP/Absent :"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="277" height="20" uuid="922ccccb-d54a-4607-8155-909498b49a7b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="278" height="20" uuid="7fed0265-f1a8-408e-a60a-9ae5e5caaef9"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" markup="none"/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<componentElement>
+				<reportElement x="0" y="0" width="278" height="20" uuid="704c0606-31b9-4cb3-947f-ed5c2681c01c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="EmpSalaryEarnings" uuid="10530850-8328-44d5-aa7f-441cb384e22f">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Document/Disclosure/row/Always/EmpInfo/SalaryEarnings/Component")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="278">
+						<textField>
+							<reportElement x="0" y="0" width="226" height="20" uuid="0a6af06b-13df-4041-8999-b0b42d1b095e"/>
+							<box leftPadding="10">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentDesc}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="226" y="0" width="52" height="20" uuid="e698e2c9-2057-4be5-96c5-8836b467c942"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentAmt}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement x="278" y="0" width="277" height="20" uuid="b9c5a7a9-0e7a-4adf-8f12-dfd613fe782e"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="EmpSalaryDeductions" uuid="352cd374-279f-4821-89f4-071575f41bd1">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Document/Disclosure/row/Always/EmpInfo/SalaryDeductions/Component")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="277">
+						<textField>
+							<reportElement x="0" y="0" width="225" height="20" uuid="5b3ce6fa-90b1-4261-b468-68f809e5769c"/>
+							<box leftPadding="10">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentDesc}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="225" y="0" width="52" height="20" uuid="7909f036-6dd7-4586-b85a-b07f1c77b32a"/>
+							<box leftPadding="5">
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+							<textFieldExpression><![CDATA[$F{ComponentAmt}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="39">
+			<textField>
+				<reportElement x="0" y="0" width="278" height="20" uuid="603353fb-ae40-4ad4-a8c6-866153c7b9b3"/>
+				<box rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA["Total Earnings 72008.00"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="277" height="20" uuid="92290816-96f9-49c7-9aae-02f536bdd0e9"/>
+				<box rightPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
+				<textFieldExpression><![CDATA["Total Deductions 10780.00"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="278" y="19" width="277" height="20" uuid="b2a0fa53-db73-4782-9555-d637b144fb61"/>
+				<box rightPadding="5">
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["61228.00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="19" width="278" height="20" uuid="ed2fb3de-52a1-44e3-b054-3e860d5b38c9"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" markup="none"/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="20" uuid="ec984d21-d558-44b7-931a-56daf24bfda5"/>
+				<textElement markup="none">
+					<font isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Net Pay: Rupees Sixty One Thousand Two Hundred Twenty Eight Only"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="20" uuid="583522dd-b69d-4e4d-ae43-5f28d8a4f446"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Bank A/c No.: 056401508883"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50"/>
+	</detail>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField isStretchWithOverflow="true" evaluationTime="Page">
+				<reportElement stretchType="RelativeToBandHeight" x="239" y="0" width="83" height="29" isPrintWhenDetailOverflows="true" uuid="4b6ce787-fc33-4acb-9547-4aa5031a7b50"/>
+				<textElement textAlignment="Center" markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement stretchType="RelativeToBandHeight" x="298" y="0" width="23" height="29" isPrintWhenDetailOverflows="true" uuid="b22cb956-e478-4bc6-946b-b5d16b8e7b39"/>
+				<textElement textAlignment="Center" markup="none">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
